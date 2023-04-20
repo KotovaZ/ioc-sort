@@ -3,14 +3,14 @@
 namespace App\Sort;
 
 use App\Interfaces\Command;
-use App\IoC\IoC;
+use App\Interfaces\Container;
 use App\MacroCommand;
 
 class FileSortCommand implements Command
 {
-    private IoC $container;
+    private Container $container;
 
-    public function __construct(IoC $container)
+    public function __construct(Container $container)
     {
         $this->container = $container;
     }

@@ -3,9 +3,10 @@
 namespace App\IoC;
 
 use App\Exceptions\NotFoundException;
+use App\Interfaces\Container;
 use Closure;
 
-class IoC
+class IoC implements Container
 {
     private array $bindings;
 
@@ -21,7 +22,7 @@ class IoC
         ];
     }
 
-    public function resolve(string $key, ...$args)
+    public function resolve(string $key, mixed ...$args): mixed
     {
         if (!isset($this->bindings[$key]))
             throw new NotFoundException("Зависимость $key не объявлена", 1);

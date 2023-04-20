@@ -1,10 +1,9 @@
 <?php
 
-use App\GameObject;
 use App\IO\File\FileReadCommand;
 use App\IO\File\FileWriteCommand;
 use App\IoC\IoC;
-use App\MacroCommand;
+use App\MapObject;
 use App\Sort\FileSortCommand;
 use App\Sort\InsertionSortCommand;
 use App\Sort\MergeSortCommand;
@@ -17,7 +16,7 @@ $container = new IoC;
 $container->resolve(
     'IoC.Register',
     'Sortable',
-    fn (...$attrs) => new SortableAdapter(new GameObject)
+    fn (...$attrs) => new SortableAdapter(new MapObject)
 )->execute();
 
 $container->resolve(

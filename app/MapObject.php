@@ -4,7 +4,7 @@ namespace App;
 
 use App\Interfaces\UObject;
 
-class GameObject implements UObject
+class MapObject implements UObject
 {
     private array $props = [];
 
